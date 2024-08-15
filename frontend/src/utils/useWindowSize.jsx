@@ -2,7 +2,7 @@ import { useEffect,useState } from "react"
 
 
 export const useWindowSize = () =>{
-    const [Size,setSize] = useState([0,0])
+    const [Size,setSize] = useState([window.innerWidth,window.innerHeight])
 
     useEffect(()=>{
         const updateSize = ()=>{
