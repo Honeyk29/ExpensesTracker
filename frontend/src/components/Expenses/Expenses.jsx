@@ -5,6 +5,7 @@ import { useGlobalContext } from '../../context/globalContext';
 import Forms from '../Forms/Forms';
 import IncomeItem from '../IncomeItem/IncomeItem';
 import ExpenseForms from '../Forms/Expenseforms';
+import { dollar } from '../../utils/icons';
 function Expenses() {
     const {addExpense,expenses,getExpense,deleteExpense,totalExpense} = useGlobalContext();
 
@@ -15,7 +16,7 @@ function Expenses() {
         <ExpenseStyled>
             <InnerLayout>
                 <h1>Expenses</h1>
-                <h2 className='total-income'>Total Expense: <span>${totalExpense()}</span></h2>
+                <h2 className='total-income'>Total Expense: <span>{dollar}{totalExpense()}</span></h2>
                 <div className="income-content">
                     <div className="form-container">
                         <ExpenseForms/>
@@ -32,7 +33,7 @@ function Expenses() {
                                 date = {date}
                                 category = {category}
                                 type={type}
-                                indicatorColor="var(--color-accent)"
+                                indicatorColor="red"
                                 deleteItem={deleteExpense}
                             />
                         })}
@@ -60,7 +61,7 @@ const ExpenseStyled = styled.div`
         span{
             font-size: 2.5rem;
             font-weight: 800;
-            color: 'red';
+            color: red;
         }
     }
     .income-content{
