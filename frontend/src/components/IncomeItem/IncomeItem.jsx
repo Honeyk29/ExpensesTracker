@@ -93,26 +93,35 @@ function IncomeItem({
     )
 }
 const IncomeItemStyled = styled.div`
-    background: #FCF6F9;
-    border: 2px solid #FFFFFF;
-    box-shadow: 0px 1px 15px rgba(0,0,0,0.06);
-    border-radius:20px;
-    padding: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 8px 32px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    width: 90%;
+    gap: 1.5rem;
+    width: 100%;
     color: #222260;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 12px 40px rgba(0,0,0,0.08);
+    }
+
     .icon{
         width: 80px;
         height: 80px;
         border-radius: 20px;
-        background: #F5F5F5;
+        background: rgba(245, 245, 245, 0.8);
         display: flex;
         align-items: center;
         justify-content: center;
         border: 2px solid #FFFFFF;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
         i{
             font-size: 2.6rem;
         }
@@ -126,6 +135,7 @@ const IncomeItemStyled = styled.div`
             font-size: 1.3rem;
             padding-left: 2rem;
             position: relative;
+            font-weight: 700;
             &:before{
                 content: '';
                 position: absolute;
@@ -136,6 +146,7 @@ const IncomeItemStyled = styled.div`
                 height: .8rem;
                 border-radius: 50%;
                 background: ${props => props.indicator};
+                box-shadow: 0px 0px 8px ${props => props.indicator}80;
             }
         }
         .inner-content{
@@ -145,7 +156,7 @@ const IncomeItemStyled = styled.div`
             .text{
                 display: flex;
                 align-items: center;
-                gap:1.5rem;
+                gap: 1.5rem;
             }
             p{
                 display: flex;
@@ -153,6 +164,16 @@ const IncomeItemStyled = styled.div`
                 gap: 0.5rem;
                 color: var(--primary-color);
                 opacity: 0.8;
+                font-weight: 500;
+            }
+            .btn-con {
+                button {
+                    transition: all 0.3s ease;
+                    &:hover {
+                        transform: scale(1.1) rotate(5deg);
+                        box-shadow: 0px 6px 20px rgba(255, 0, 0, 0.2);
+                    }
+                }
             }
         }
     }
